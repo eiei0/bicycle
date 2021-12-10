@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package bicycle;
+
+service Chain {
+  rpc CreateChain(CreateChainRequest) returns (CreateChainResponse);
+}
+
+message CreateChainRequest {
+  string crank_id = 1;
+  string manufacturer = 2;
+}
+
+message CreateChainResponse {
+  BikeChain chain = 1;
+}
+
+message BikeChain {
+  string id = 1;
+  string crank_id = 2;
+  string manufacturer = 3;
+}
