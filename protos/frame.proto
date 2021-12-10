@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package bicycle;
+
+service Frame {
+  rpc CreateFrame(CreateFrameRequest) returns (CreateFrameResponse);
+}
+
+message CreateFrameRequest {
+  string manufacturer = 1;
+  FrameMaterial material = 2;
+  FrameSize size = 3;
+  FrameType type = 4;
+}
+
+message CreateFrameResponse {
+  BikeFrame frame = 1;
+}
+
+message BikeFrame {
+  string id = 1;
+  string manufacturer = 2;
+  FrameMaterial material = 3;
+  FrameSize size = 4;
+  FrameType type = 5;
+  uint32 part_count = 6;
+}
+
+enum FrameMaterial {
+  FRAME_MATERIAL_UNSPECIFIED = 0;
+  FRAME_MATERIAL_ALUMINUM = 1;
+  FRAME_MATERIAL_STEEL = 2;
+  FRAME_MATERIAL_CARBON = 3;
+}
+
+enum FrameSize {
+  FRAME_SIZE_UNSPECIFIED = 0;
+  FRAME_SIZE_XXS = 1;
+  FRAME_SIZE_XS = 2;
+  FRAME_SIZE_S = 3;
+  FRAME_SIZE_M = 4;
+  FRAME_SIZE_L = 5;
+  FRAME_SIZE_XL = 6;
+}
+
+enum FrameType {
+  FRAME_TYPE_UNSPECIFIED = 0;
+  FRAME_TYPE_ROAD = 1;
+  FRAME_TYPE_MOUNTAIN = 2;
+  FRAME_TYPE_BMX = 3;
+  FRAME_TYPE_GRAVEL = 4;
+}
