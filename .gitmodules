@@ -1,0 +1,9 @@
+[submodule "crank"]
+	path = crank
+	url = git@github.com:eiei0/crank.git
+[submodule "frame"]
+	path = frame
+	url = git@github.com:eiei0/frame.git
+[submodule "chain"]
+	path = chain
+	url = git@github.com:eiei0/chain.git
